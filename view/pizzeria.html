@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pizzeria</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      h1 {
+        color: #ffffff;
+        font-size: 60px;
+        text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+          -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+          0px -2px 0 black;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #ffc107;">
+    <div class="container-fluid" style="max-width: 2000px;">
+      <div class="row justify-content-md-center">
+        <div class="col-auto align-self-center">
+          <h1>Pizzería Carlos</h1>
+        </div>
+      </div>
+      <div class="row justify-content-start">
+        <div class="col-sl">
+          <div id="pizzaDiv"></div>
+          <div id="customizedPizzas" class="row justify-content-md-center">
+            <div
+              style="background-color: white; border: 3px solid black; border-radius: 34px; padding: 10px;"
+              class="col-9"
+            >
+              <h3 align="center">Custom</h3>
+              <div class="row justify-content-md-center">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radioSizes"
+                    id="smallR"
+                    value="small"
+                  />
+                  <label class="form-check-label" for="smallR">Small</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radioSizes"
+                    id="mediumR"
+                    value="medium"
+                  />
+                  <label class="form-check-label" for="mediumR">Medium</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radioSizes"
+                    id="bigR"
+                    value="big"
+                  />
+                  <label class="form-check-label" for="bigR">Big</label>
+                </div>
+              </div>
+              <br />
+              <div class="row justify-content-md-center">
+                <div class="col-auto align-self-end">
+                  <div class="form-check form-check-inline">
+                    <input
+                      name="checkIngredient"
+                      class="form-check-input"
+                      type="checkbox"
+                      id="cheeseCheckbox"
+                      value="cheese"
+                    />
+                    <label class="form-check-label" for="cheeseCheckbox"
+                      >Cheese</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      name="checkIngredient"
+                      class="form-check-input"
+                      type="checkbox"
+                      id="baconCheckBox"
+                      value="bacon"
+                    />
+                    <label class="form-check-label" for="baconCheckBox"
+                      >Bacon</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      name="checkIngredient"
+                      class="form-check-input"
+                      type="checkbox"
+                      id="mushroomsCheckBox"
+                      value="mushrooms"
+                    />
+                    <label class="form-check-label" for="mushroomsCheckBox"
+                      >Mushrooms</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      name="checkIngredient"
+                      class="form-check-input"
+                      type="checkbox"
+                      id="olivesCheckBox"
+                      value="olives"
+                    />
+                    <label class="form-check-label" for="olivesCheckBox"
+                      >Olives</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      name="checkIngredient"
+                      class="form-check-input"
+                      type="checkbox"
+                      id="pineappleCheckBox"
+                      value="pineapple"
+                    />
+                    <label class="form-check-label" for="pineappleCheckBox"
+                      >Pineapple</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      name="checkIngredient"
+                      class="form-check-input"
+                      type="checkbox"
+                      id="tunaCheckBox"
+                      value="tuna"
+                    />
+                    <label class="form-check-label" for="tunaCheckBox"
+                      >Tuna</label
+                    >
+                  </div>
+                </div>
+                <br />
+              </div>
+              <br />
+              <div class="row justify-content-md-center">
+                <button
+                  type="button"
+                  id="addCustom"
+                  class="btn btn-outline-dark"
+                  value="0"
+                >
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col mt-2">
+          <ul
+            id="cart"
+            style="border: 3px solid black; border-radius: 7px;"
+            class="list-group"
+          >
+            <li
+              style="text-align: center;"
+              class="list-group-item d-flex align-items-center"
+            >
+              PIZZA
+              <span style="margin-left: 120px;">PRICE</span>
+              <span style="margin-left: 50px;">QUANTITY</span>
+              <span style="margin-left: 40px;">DELETE</span>
+            </li>
+          </ul>
+          <ul
+            style="border: 3px solid black; margin-top: 5px; border-radius: 7px;"
+            class="list-group"
+          >
+            <li
+              style="text-align: center;"
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              TOTAL:
+              <span id="totalPrice" class="badge badge-dark badge-pill"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="pizzaView.js"></script>
+  <script src="../controller/pizzaController.js"></script>
+  <script src="../service/pizzaService.js"></script>
+  <script src="../model/pizzaModel.js"></script>
+  <script src="../service/cartService.js"></script>
+  <script src="../app.js"></script>
+</html>

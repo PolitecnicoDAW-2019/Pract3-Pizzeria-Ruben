@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Carbonara",
+        "image": "../resources/carbonara.png",
+        "prices": [
+            {
+                "size": "Small",
+                "price": 5
+            },
+            {
+                "size": "Medium",
+                "price": 7
+            },
+            {
+                "size": "Big",
+                "price": 9
+            }
+        ]
+    },
+    {
+        "name": "Barbacoa",
+        "image": "../resources/barbacoa.png",
+        "prices": [
+            {
+                "size": "Small",
+                "price": 3.5
+            },
+            {
+                "size": "Medium",
+                "price": 6
+            },
+            {
+                "size": "Big",
+                "price": 8
+            }
+        ]
+    },
+    {
+        "name": "Prosciutto",
+        "image": "../resources/prosciutto.png",
+        "prices": [
+            {
+                "size": "Small",
+                "price": 4
+            },
+            {
+                "size": "Medium",
+                "price": 6
+            },
+            {
+                "size": "Big",
+                "price": 7
+            }
+        ]
+    }
+]
